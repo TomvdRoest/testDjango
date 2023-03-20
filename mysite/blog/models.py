@@ -17,7 +17,7 @@ class Post(models.Model):
         return self.title
     
 
-class Post(models.Model):
+class PostFootballer(models.Model):
     footballer_name = models.CharField(max_length=30)
     football_club = models.CharField(max_length=30)
     author_name = models.CharField(max_length=30)
