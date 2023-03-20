@@ -15,3 +15,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class PostFootballer(models.Model):
+    footballer_name = models.CharField(max_length=30)
+    football_club = models.CharField(max_length=30)
+    author_name = models.CharField(max_length=30)
+    created_date = models.DateTimeField(auto_now_add=True)
+    modified_date = models.DateTimeField(auto_now=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.footballer_name
