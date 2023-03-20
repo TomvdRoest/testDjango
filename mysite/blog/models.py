@@ -18,8 +18,8 @@ class Post(models.Model):
     
 
 class Voetbalspelers(models.Model):
-    footballer_name = models.CharField(max_length=30)
-    football_club = models.CharField(max_length=30)
+    voetbalspeler_name = models.CharField(max_length=30)
+    voetbal_club = models.CharField(max_length=30)
     author_name = models.CharField(max_length=30)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
@@ -33,4 +33,4 @@ class Voetbalspelers(models.Model):
         self.save()
 
     def __str__(self):
-        return self.footballer_name
+        return self.voetbalspeler_name
