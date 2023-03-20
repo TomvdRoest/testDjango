@@ -21,8 +21,8 @@ class PostFootballer(models.Model):
     footballer_name = models.CharField(max_length=30)
     football_club = models.CharField(max_length=30)
     author_name = models.CharField(max_length=30)
-    created_date = models.DateTimeField(auto_now_add=True)
-    modified_date = models.DateTimeField(auto_now=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
